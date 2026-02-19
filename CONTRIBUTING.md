@@ -1,67 +1,67 @@
-# Como Contribuir
+# Contributing
 
-Obrigado pelo interesse em contribuir para a API Aberta! 🇵🇹
+Thank you for your interest in contributing to API Aberta! 🇵🇹
 
-## Formas de contribuir
+## Ways to contribute
 
-### 🔌 Criar um conector
+### 🔌 Build a connector
 
-A forma mais impactante de ajudar. Cada conector traz novos dados para a plataforma.
+The most impactful way to help. Each connector brings new data to the platform.
 
-1. Verifica se a fonte ainda não tem conector em [fontes-de-dados.md](docs/fontes-de-dados.md)
-2. Abre uma issue com o label `novo-conector` para discutir
-3. Faz fork do repo `connectors`
-4. Implementa seguindo a [guia de conectores](docs/conectores.md)
-5. Abre um Pull Request
+1. Check if the source already has a connector in [data-sources.md](docs/data-sources.md)
+2. Open an issue with the `new-connector` label to discuss it
+3. Fork the `connectors` repo
+4. Implement following the [connector guide](docs/connectors.md)
+5. Open a Pull Request
 
-### 🐛 Reportar um bug
+### 🐛 Report a bug
 
-1. Verifica se o bug já foi reportado nas [issues](https://github.com/apiaberta/apiaberta/issues)
-2. Usa o template "Bug Report"
-3. Inclui passos para reproduzir, comportamento esperado vs actual
+1. Check if the bug has already been reported in [issues](https://github.com/apiaberta/apiaberta/issues)
+2. Use the "Bug Report" template
+3. Include steps to reproduce, expected vs actual behaviour
 
-### 💡 Sugerir uma funcionalidade
+### 💡 Suggest a feature
 
-1. Abre uma issue com o label `sugestão`
-2. Descreve o caso de uso e o valor que traz
+1. Open an issue with the `enhancement` label
+2. Describe the use case and the value it brings
 
-### 📝 Melhorar a documentação
+### 📝 Improve documentation
 
-Erros, ambiguidades ou lacunas na documentação são bugs. PRs para docs são sempre bem-vindos.
+Errors, ambiguities or gaps in documentation are bugs. Docs PRs are always welcome.
 
 ---
 
-## Setup de desenvolvimento
+## Development setup
 
 ```bash
-# Clonar
+# Clone
 git clone https://github.com/apiaberta/api.git
 cd api
 
-# Instalar dependências
+# Install dependencies
 npm install
 
-# Variáveis de ambiente
+# Environment variables
 cp .env.example .env
-# Editar .env com as tuas configurações
+# Edit .env with your settings
 
-# Correr localmente
+# Run locally
 npm run dev
 ```
 
-Requisitos: Node.js 22+, MongoDB 7+
+Requirements: Node.js 22+, MongoDB 7+
 
 ---
 
-## Convenções
+## Conventions
 
-- **Commits:** mensagens em português, imperativo (`Adiciona endpoint X`, `Corrige bug Y`)
-- **Branches:** `feat/nome`, `fix/nome`, `docs/nome`
-- **PRs:** descrição clara do que muda e porquê
-- **Código:** ESLint + Prettier (configuração no repo)
+- **Commits:** English, imperative mood (`Add endpoint X`, `Fix bug Y`)
+- **Branches:** `feat/name`, `fix/name`, `docs/name`
+- **PRs:** clear description of what changes and why
+- **Code:** ESLint + Prettier (config in repo)
 
 ---
 
-## Código de Conduta
+## Code of Conduct
 
-Este projecto segue o [Código de Conduta](CODE_OF_CONDUCT.md). Respeito e colaboração acima de tudo.
+This project follows the [Code of Conduct](CODE_OF_CONDUCT.md). Respect and collaboration above all.

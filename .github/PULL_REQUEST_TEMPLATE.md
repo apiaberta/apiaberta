@@ -1,23 +1,23 @@
-## Descrição
+## Description
 
-O que este PR faz? Referencia a issue relacionada se existir (ex: `Closes #42`).
+What does this PR do? Reference the related issue if applicable (e.g. `Closes #42`).
 
-## Tipo de mudança
+## Type of change
 
 - [ ] 🐛 Bug fix
-- [ ] ✨ Nova funcionalidade
-- [ ] 🔌 Novo conector
-- [ ] 📝 Documentação
+- [ ] ✨ New feature
+- [ ] 🔌 New connector
+- [ ] 📝 Documentation
 - [ ] ♻️ Refactoring
-- [ ] 🔧 Configuração / infra
+- [ ] 🔧 Configuration / infrastructure
 
-## Como testar
+## How to test
 
-Passos para testar esta mudança localmente.
+Steps to test this change locally.
 
 ## Checklist
 
-- [ ] O código segue as convenções do projecto
-- [ ] Adicionei/actualizei testes relevantes
-- [ ] Actualizei a documentação se necessário
-- [ ] Testei localmente e funciona
+- [ ] Code follows project conventions
+- [ ] Added / updated relevant tests
+- [ ] Updated documentation if needed
+- [ ] Tested locally and working

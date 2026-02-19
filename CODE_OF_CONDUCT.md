@@ -1,31 +1,31 @@
-# Código de Conduta
+# Code of Conduct
 
-## O nosso compromisso
+## Our commitment
 
-Queremos um ambiente aberto e acolhedor para todos, independentemente da experiência, género, orientação, etnia, religião ou outros factores pessoais.
+We want an open and welcoming environment for everyone, regardless of experience, gender, orientation, ethnicity, religion or other personal factors.
 
-## O que esperamos
+## What we expect
 
-- Linguagem respeitosa e inclusiva
-- Respeito por perspectivas diferentes
-- Crítica construtiva ao código, não às pessoas
-- Foco no que é melhor para o projecto e para a comunidade
+- Respectful and inclusive language
+- Respect for different perspectives
+- Constructive criticism of the code, not the person
+- Focus on what is best for the project and the community
 
-## O que não toleramos
+## What we will not tolerate
 
-- Linguagem ou imagens ofensivas
-- Ataques pessoais ou políticos
-- Assédio público ou privado
-- Partilha de informação privada de outros sem permissão
+- Offensive language or imagery
+- Personal or political attacks
+- Public or private harassment
+- Sharing someone else's private information without permission
 
-## Responsabilidades
+## Responsibilities
 
-Os maintainers têm o direito de remover contribuições que não respeitem este código, e de banir temporária ou permanentemente qualquer contribuidor.
+Maintainers have the right to remove contributions that do not respect this code, and to temporarily or permanently ban any contributor.
 
-## Contacto
+## Contact
 
-Problemas podem ser reportados abrindo uma issue ou por email (a definir).
+Issues can be reported by opening a GitHub issue.
 
 ---
 
-*Adaptado do [Contributor Covenant](https://www.contributor-covenant.org/), versão 2.1.*
+*Adapted from the [Contributor Covenant](https://www.contributor-covenant.org/), version 2.1.*

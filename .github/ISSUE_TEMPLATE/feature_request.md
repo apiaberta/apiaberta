@@ -1,35 +1,35 @@
 ---
-name: Sugestão / Feature Request
-about: Propor uma nova funcionalidade ou melhoria
+name: Feature Request
+about: Suggest a new feature or improvement
 title: '[FEAT] '
-labels: sugestão
+labels: enhancement
 assignees: ''
 ---
 
-## Problema que resolve
+## Problem it solves
 
-Que problema ou necessidade motiva esta sugestão?
+What problem or need motivates this suggestion?
 
-## Solução proposta
+## Proposed solution
 
-Descrição clara da funcionalidade que queres ver implementada.
+A clear description of the feature you'd like to see implemented.
 
-## Alternativas consideradas
+## Alternatives considered
 
-Outras abordagens que consideraste.
+Other approaches you've considered.
 
-## Exemplos
+## Examples
 
-Se possível, exemplo de como ficaria o endpoint ou a funcionalidade:
+If possible, an example of what the endpoint or feature would look like:
 
 ```http
-GET /v1/exemplo?param=valor
+GET /v1/example?param=value
 
 {
   "data": [...]
 }
 ```
 
-## Contexto adicional
+## Additional context
 
-Qualquer informação adicional relevante.
+Any other relevant information.

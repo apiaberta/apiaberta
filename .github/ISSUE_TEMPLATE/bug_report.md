@@ -1,28 +1,28 @@
 ---
 name: Bug Report
-about: Reportar um problema com a API ou um conector
+about: Report a problem with the API or a connector
 title: '[BUG] '
 labels: bug
 assignees: ''
 ---
 
-## Descrição
+## Description
 
-Descrição clara e concisa do bug.
+A clear and concise description of the bug.
 
-## Passos para reproduzir
+## Steps to reproduce
 
-1. Fazer `GET /v1/...`
-2. Com os parâmetros `...`
-3. Ver erro
+1. Call `GET /v1/...`
+2. With parameters `...`
+3. See error
 
-## Comportamento esperado
+## Expected behaviour
 
-O que deveria acontecer.
+What should happen.
 
-## Comportamento actual
+## Actual behaviour
 
-O que está a acontecer. Incluir a resposta da API se aplicável.
+What is happening. Include the API response if applicable.
 
 ```json
 {
@@ -30,8 +30,8 @@ O que está a acontecer. Incluir a resposta da API se aplicável.
 }
 ```
 
-## Contexto adicional
+## Additional context
 
-- Endpoint afectado:
-- Frequência: sempre / às vezes
-- Primeira vez que ocorreu:
+- Affected endpoint:
+- Frequency: always / intermittent
+- First occurrence:
