@@ -50,8 +50,12 @@ Gov Source → Connector → Ingest → Database → Public API
 | [INE](https://www.ine.pt) | National statistics | `/v1/ine/*` | ✅ Live |
 | [ANPC](https://www.prociv.pt) | Civil protection alerts | `/v1/anpc/*` | ✅ Live |
 | [BdP](https://www.bportugal.pt) | Interest rates | `/v1/bdp/*` | ✅ Live |
-| [CTT](https://www.ctt.pt) | Geographic data | `/v1/geo/*` | ✅ Live |
+| [geoapi.pt](https://geoapi.pt) | Geographic data (districts, municipalities) | `/v1/geo/*` | ✅ Live |
+| MOD 11 | NIF validation algorithm | `/v1/nif/*` | ✅ Live |
 | [Portal Base](https://www.base.gov.pt) | Public contracts | `/v1/base/*` | 🚧 Blocked (awaiting API access) |
+| [NASA FIRMS](https://firms.modaps.eosdis.nasa.gov) | Satellite fire detection | `/v1/nasafirms/*` | ✅ Live |
+| [DRE](https://dre.pt) | Republic legislation | `/v1/dre/*` | ✅ Live |
+| [transparencia.gov.pt](https://transparencia.gov.pt) | PRR / PT2030 European funds | `/v1/prr/*` | ✅ Live |
 
 ---
 
