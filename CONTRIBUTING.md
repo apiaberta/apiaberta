@@ -10,7 +10,7 @@ The most impactful way to help. Each connector brings new data to the platform.
 
 1. Check whether the source already has a connector in [data-sources.md](docs/data-sources.md)
 2. Open an issue with the `new-source` label to discuss it (use the "New Data Source" template)
-3. Create your service from [service-template](https://github.com/apiaberta/service-template) — one repository per connector, named `connector-<name>`
+3. Fork or copy [service-template](https://github.com/apiaberta/service-template) — each connector is its own repository, named `connector-<name>`. Where yours will live in the organisation is agreed in the issue
 4. Implement it following the [service guidelines](docs/service-guidelines.md)
 5. Once it is live and passes the checklist, open an issue with the `new-connector` label so the gateway team can register it (see [Registering your service](docs/service-guidelines.md#10-registering-your-service))
 
@@ -55,6 +55,15 @@ npm test
 ```
 
 Requirements: Node.js 22+, MongoDB 7+
+
+---
+
+## Submitting changes
+
+1. **Fork** the repository you want to change (unless you have write access to it) and clone your fork
+2. Create a branch from `main` (`feat/name`, `fix/name` or `docs/name`) — never commit to `main`
+3. Commit, then **push the branch to your fork**
+4. Open a **Pull Request** against `main` of the original repository, filling in the pull request template
 
 ---
 
