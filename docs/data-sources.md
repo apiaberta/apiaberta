@@ -1,132 +1,148 @@
 # Data Sources
 
-Inventário de fontes de dados públicos portugueses para conectores da API Aberta.
+Inventory of Portuguese public data sources for API Aberta connectors.
 
-Legenda de estados: **live** = disponível na API | **planned** = no roadmap | **investigate** = a avaliar | **blocked** = acesso restrito
-
----
-
-## ⛽ Energia
-
-| Fonte | URL | Dados | Estado | Prioridade |
-|-------|-----|-------|--------|------------|
-| DGEG — Preços de Combustíveis | https://precoscombustiveis.dgeg.gov.pt/api/ | Preços por posto, tipo, distrito, marca (14 tipos) | **live** | — |
-| DGEG — ArcGIS / SIG | https://sig.dgeg.gov.pt/ | Mapas de infraestrutura energética | investigate | baixa |
-| ERSE — Regulação energética | https://www.erse.pt | Tarifas de eletricidade e gás | investigate | média |
+Status legend: **live** = available in the API | **planned** = on the roadmap | **investigate** = being evaluated | **blocked** = restricted access
 
 ---
 
-## 🌤️ Meteorologia
+## ⛽ Energy
 
-| Fonte | URL | Dados | Estado | Prioridade |
-|-------|-----|-------|--------|------------|
-| IPMA — Previsão | https://api.ipma.pt/ | Previsões por local, avisos, temperatura, precipitação | **planned** | alta |
-| IPMA — Observação | https://api.ipma.pt/ | Dados de estações meteorológicas (temperatura, vento, humidade) | **planned** | alta |
-| IPMA — UV / Qualidade do ar | https://api.ipma.pt/ | Índice UV, partículas, ozono | investigate | média |
-
----
-
-## 📊 Estatística Nacional
-
-| Fonte | URL | Dados | Estado | Prioridade |
-|-------|-----|-------|--------|------------|
-| INE — Indicadores Económicos | https://www.ine.pt/ine/json_api/ | PIB, inflação, desemprego, população (registo gratuito) | **planned** | alta |
-| INE — Censos | https://www.ine.pt | Dados dos censos 2021, distribuição populacional | investigate | média |
-| Banco de Portugal | https://bpstat.bportugal.pt/api/ | Taxas de juro, câmbios, crédito, balança de pagamentos | investigate | média |
-| PORDATA | https://www.pordata.pt | Séries históricas de indicadores sociais e económicos (sem API pública formal) | investigate | baixa |
+| Source | URL | Data | Status | Priority |
+|--------|-----|------|--------|----------|
+| DGEG — Fuel prices | https://precoscombustiveis.dgeg.gov.pt/api/ | Prices by station, type, district, brand (14 types) | **live** (`/v1/fuel`) | — |
+| ERSE / OMIE — EV charging | https://www.erse.pt | CEME charging tariffs and OMIE spot electricity prices | **live** (`/v1/ev`) | — |
+| DGEG — ArcGIS / SIG | https://sig.dgeg.gov.pt/ | Energy infrastructure maps | investigate | low |
+| ERSE — Energy regulation | https://www.erse.pt | Electricity and gas tariffs | investigate | medium |
 
 ---
 
-## 📜 Legislação e Contratos Públicos
+## 🌤️ Weather
 
-| Fonte | URL | Dados | Estado | Prioridade |
-|-------|-----|-------|--------|------------|
-| Portal BASE — Contratos | https://www.base.gov.pt/Base4/pt/docs/ | Contratos públicos, adjudicações, entidades (JSON/REST) | **planned** | alta |
-| DRE — Diário da República | https://dre.pt/api/v2/ | Legislação, portarias, diplomas (JSON/REST) | **planned** | média |
-| dados.gov.pt | https://dados.gov.pt/api/1/ | Portal open data oficial (CKAN API, múltiplos datasets) | investigate | média |
-
----
-
-## 🚒 Protecção Civil e Emergências
-
-| Fonte | URL | Dados | Estado | Prioridade |
-|-------|-----|-------|--------|------------|
-| ANEPC — Alertas e Ocorrências | https://www.bombeiros.pt/info-estatistica | Incêndios, inundações, alertas em tempo real | investigate | alta |
-| ANEPC — Risco de Incêndio | https://www.anepc.pt | Índice de risco por distrito/município | investigate | alta |
-| INEM — Estatísticas | https://www.inem.pt | Chamadas CODU, tempos de resposta (sem API pública conhecida) | investigate | média |
+| Source | URL | Data | Status | Priority |
+|--------|-----|------|--------|----------|
+| IPMA — Forecast | https://api.ipma.pt/ | Forecasts by location, warnings, seismic events | **live** (`/v1/ipma`) | — |
+| IPMA — Observations | https://api.ipma.pt/ | Weather station data (temperature, wind, humidity) | **planned** | high |
+| IPMA — UV / Air quality | https://api.ipma.pt/ | UV index, particulates, ozone | investigate | medium |
 
 ---
 
-## 🏫 Educação
+## 📊 National statistics
 
-| Fonte | URL | Dados | Estado | Prioridade |
-|-------|-----|-------|--------|------------|
-| DGEEC — Estatísticas de Educação | https://www.dgeec.mec.pt | Alunos por escola, taxas de escolarização, resultados (sem API formal) | investigate | média |
-| DGES — Ensino Superior | https://www.dges.gov.pt | Candidaturas, vagas, notas de entrada | investigate | média |
-| ME — Carta Educativa | https://dados.gov.pt | Mapa de escolas, tipologias, localização | investigate | baixa |
-
----
-
-## 🏥 Saúde
-
-| Fonte | URL | Dados | Estado | Prioridade |
-|-------|-----|-------|--------|------------|
-| SNS — Tempos de Espera | https://www.sns.gov.pt | Urgências, cirurgias, consultas (dados publicados periodicamente) | investigate | média |
-| DGS — Vigilância Epidemiológica | https://www.dgs.pt | Doenças de notificação obrigatória, gripe, COVID (histórico) | investigate | média |
-| INFARMED — Medicamentos | https://www.infarmed.pt | Preços e disponibilidade de medicamentos | investigate | baixa |
+| Source | URL | Data | Status | Priority |
+|--------|-----|------|--------|----------|
+| INE — Economic indicators | https://www.ine.pt/ine/json_api/ | GDP, inflation, unemployment, population (free registration) | **live** (`/v1/ine`) | — |
+| Banco de Portugal — Interest rates | https://bpstat.bportugal.pt/api/ | ECB key rates, €STR, lending and deposit rates | **live** (`/v1/bdp`) | — |
+| INE — Census | https://www.ine.pt | 2021 census data, population distribution | investigate | medium |
+| Banco de Portugal — Other series | https://bpstat.bportugal.pt/api/ | Exchange rates, credit, balance of payments | investigate | medium |
+| PORDATA | https://www.pordata.pt | Historical series of social and economic indicators (no formal public API) | investigate | low |
 
 ---
 
-## 🌿 Ambiente
+## 📜 Legislation, contracts and funds
 
-| Fonte | URL | Dados | Estado | Prioridade |
-|-------|-----|-------|--------|------------|
-| APA — Qualidade do Ar | https://qualar.apambiente.pt/api | Índice de qualidade do ar por estação (JSON) | **planned** | alta |
-| APA — Recursos Hídricos | https://snirh.apambiente.pt | Níveis de albufeiras, caudais, qualidade da água | investigate | média |
-| ICNF — Biodiversidade | https://www.icnf.pt | Áreas protegidas, espécies, habitats | investigate | baixa |
-
----
-
-## 🚌 Transportes
-
-| Fonte | URL | Dados | Estado | Prioridade |
-|-------|-----|-------|--------|------------|
-| IMT — Veículos e Condutores | https://www.imt-ip.pt | Matrículas, cartas de condução, inspecções (sem API pública) | investigate | baixa |
-| ANAC — Aviação Civil | https://www.anac.pt | Operações de voo, aeródromos, certificações | investigate | média |
-| ANA Aeroportos | https://www.ana.pt | Tráfego de passageiros, voos em tempo real | investigate | média |
-| CP — Comboios de Portugal | https://www.cp.pt | Horários, tarifas (sem API pública formal) | investigate | média |
-| Carris/Metro Lisboa | — | GTFS realtime (em avaliação) | investigate | baixa |
+| Source | URL | Data | Status | Priority |
+|--------|-----|------|--------|----------|
+| Portal BASE — Contracts | https://www.base.gov.pt/Base4/pt/docs/ | Public contracts, awards, entities | **live** (`/v1/base`, alias `/v1/contracts`) | — |
+| DRE — Diário da República | https://dre.pt/api/v2/ | Legislation, ordinances, decrees (JSON/REST) | **live** (`/v1/dre`) | — |
+| transparencia.gov.pt | https://transparencia.gov.pt | PRR and Portugal 2030 European funds | **live** (`/v1/prr`, `/v1/pt2030`) | — |
+| Assembleia da República | https://www.parlamento.pt | Initiatives, votes, MPs, parliamentary groups, petitions | **live** (`/v1/parlamento`) | — |
+| dados.gov.pt | https://dados.gov.pt/api/1/ | Official open data portal (CKAN API, many datasets) | investigate | medium |
 
 ---
 
-## 🏢 Registos Empresariais e Judiciais
+## 🚒 Civil protection and emergencies
 
-| Fonte | URL | Dados | Estado | Prioridade |
-|-------|-----|-------|--------|------------|
-| IRN / RNPC — Registo Nacional de Pessoas Colectivas | https://www.irn.mj.pt | NIPC, nome, sede, objecto social (sem API pública directa) | investigate | alta |
-| Insolv — Insolvências | https://www.citius.mj.pt | Processos de insolvência publicados | investigate | baixa |
-| ASAE — Fiscalização | https://www.asae.gov.pt | Estabelecimentos licenciados, fiscalizações | investigate | baixa |
-
----
-
-## 🗳️ Eleições
-
-| Fonte | URL | Dados | Estado | Prioridade |
-|-------|-----|-------|--------|------------|
-| SGMAI — Resultados Eleitorais | https://www.eleicoes.mai.gov.pt | Resultados históricos de todas as eleições por assembleia/freguesia | investigate | média |
-| CNE | https://www.cne.pt | Recenseamento eleitoral, informação oficial | investigate | baixa |
+| Source | URL | Data | Status | Priority |
+|--------|-----|------|--------|----------|
+| ANEPC — Alerts and incidents | https://www.bombeiros.pt/info-estatistica | Fires, floods, real-time alerts (via fogos.pt) | **live** (`/v1/anpc`) | — |
+| ANEPC — Fire risk | https://www.anepc.pt | Risk index by district/municipality | **live** (`/v1/anpc/risk`) | — |
+| NASA FIRMS | https://firms.modaps.eosdis.nasa.gov | VIIRS/MODIS satellite fire hotspots | **live** (`/v1/nasafirms`) | — |
+| INEM — Statistics | https://www.inem.pt | CODU calls, response times (no known public API) | investigate | medium |
 
 ---
 
-## Como propor uma nova fonte
+## 🏫 Education
 
-Abrir uma issue com a label `new-source` e incluir:
-1. Nome da entidade
-2. URL da API ou página de dados
-3. Formato disponível (JSON, XML, CSV, SOAP…)
-4. Frequência de actualização
-5. Caso de uso (para que serve?)
+| Source | URL | Data | Status | Priority |
+|--------|-----|------|--------|----------|
+| DGEEC — Education statistics | https://www.dgeec.mec.pt | Students per school, enrolment rates, results (no formal API) | investigate | medium |
+| DGES — Higher education | https://www.dges.gov.pt | Applications, places, entry grades | investigate | medium |
+| ME — School map | https://dados.gov.pt | School map, types, location | investigate | low |
 
 ---
 
-*Última actualização: Fevereiro 2026*
+## 🏥 Health
+
+| Source | URL | Data | Status | Priority |
+|--------|-----|------|--------|----------|
+| SNS — Transparency portal | https://transparencia.sns.gov.pt | Emergency, surgery, consultations and staff (monthly) | **live** (`/v1/sns`) | — |
+| DGS — Epidemiological surveillance | https://www.dgs.pt | Notifiable diseases, flu, COVID (history) | investigate | medium |
+| INFARMED — Medicines | https://www.infarmed.pt | Medicine prices and availability | investigate | low |
+
+---
+
+## 🌿 Environment
+
+| Source | URL | Data | Status | Priority |
+|--------|-----|------|--------|----------|
+| APA — Air quality | https://qualar.apambiente.pt/api | Air quality index by station (JSON) | **planned** | high |
+| APA — Water resources | https://snirh.apambiente.pt | Reservoir levels, flows, water quality | investigate | medium |
+| ICNF — Biodiversity | https://www.icnf.pt | Protected areas, species, habitats | investigate | low |
+
+---
+
+## 🚌 Transport
+
+| Source | URL | Data | Status | Priority |
+|--------|-----|------|--------|----------|
+| Carris Metropolitana | https://www.carrismetropolitana.pt | Real-time vehicles, stops, lines, alerts | **live** (`/v1/carris`) | — |
+| GTFS operators | — | Unified schedules from Portuguese operators | **live** (`/v1/gtfs`) | — |
+| IMT — Vehicles and drivers | https://www.imt-ip.pt | Registrations, driving licences, inspections (no public API) | investigate | low |
+| ANAC — Civil aviation | https://www.anac.pt | Flight operations, aerodromes, certifications | investigate | medium |
+| ANA Aeroportos | https://www.ana.pt | Passenger traffic, real-time flights | investigate | medium |
+| CP — Comboios de Portugal | https://www.cp.pt | Timetables, fares (no formal public API) | investigate | medium |
+| Metro Lisboa | — | GTFS realtime (under evaluation) | investigate | low |
+
+---
+
+## 🗺️ Geography
+
+| Source | URL | Data | Status | Priority |
+|--------|-----|------|--------|----------|
+| geoapi.pt | https://geoapi.pt | Districts, municipalities, parishes, postal codes | **live** (`/v1/geo`) | — |
+
+---
+
+## 🏢 Company and judicial registers
+
+| Source | URL | Data | Status | Priority |
+|--------|-----|------|--------|----------|
+| NIF (MOD 11 / VIES) | — | NIF validation and company name/address lookup | **live** (`/v1/nif`) | — |
+| IRN / RNPC — National Register of Legal Entities | https://www.irn.mj.pt | NIPC, name, registered office, corporate purpose (no direct public API) | investigate | high |
+| Insolv — Insolvencies | https://www.citius.mj.pt | Published insolvency proceedings | investigate | low |
+| ASAE — Inspection | https://www.asae.gov.pt | Licensed establishments, inspections | investigate | low |
+
+---
+
+## 🗳️ Elections
+
+| Source | URL | Data | Status | Priority |
+|--------|-----|------|--------|----------|
+| SGMAI — Election results | https://www.eleicoes.mai.gov.pt | Historical results of all elections by assembly/parish | investigate | medium |
+| CNE | https://www.cne.pt | Electoral register, official information | investigate | low |
+
+---
+
+## How to propose a new source
+
+Open an issue with the `new-source` label (use the "New Data Source" template) and include:
+1. Name of the entity
+2. URL of the API or data page
+3. Available format (JSON, XML, CSV, SOAP…)
+4. Update frequency
+5. Use case (what is it for?)
+
+---
+
+*Last updated: November 2026*

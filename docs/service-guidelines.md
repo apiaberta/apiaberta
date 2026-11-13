@@ -16,10 +16,12 @@ npm run dev
 
 ## 1. Mandatory endpoints
 
-Every service MUST implement these two endpoints:
+Every service MUST implement these two endpoints.
+
+> **Routing.** The gateway strips the leading `/v1` and keeps the service prefix: a request for `https://api.apiaberta.pt/v1/fuel/stations` reaches your service as `GET /fuel/stations`. Register your data routes and `/meta` under `/<service>/...`, and `/health` at the root. Do not register routes under `/v1` in the service itself. [service-template](https://github.com/apiaberta/service-template) is set up this way.
 
 ### `GET /health`
-Returns the health status of the service. Used by the gateway and monitoring.
+Returns the health status of the service. Served at the **root** (not under the service prefix). Used by the gateway (`GET /v1/status`) and monitoring.
 
 ```json
 {
@@ -29,8 +31,8 @@ Returns the health status of the service. Used by the gateway and monitoring.
 }
 ```
 
-### `GET /meta`
-Returns metadata about the data this service provides.
+### `GET /<service>/meta`
+Returns metadata about the data this service provides. Reachable through the gateway as `/v1/<service>/meta` (for example `/v1/fuel/meta`).
 
 ```json
 {
@@ -92,7 +94,7 @@ Errors:
 
 ## 4. Versioning
 
-- All data routes MUST be under `/v1/`
+- All data routes MUST be under `/v1/` **on the gateway** (the service itself serves them without the `/v1` prefix, see section 1)
 - Breaking changes require a new version (`/v2/`)
 - Old versions must remain available for at least 6 months after deprecation notice
 
@@ -127,9 +129,9 @@ Errors:
 ## 7. Security
 
 - Services are **not publicly accessible** - they only accept traffic from the gateway
-- In production, bind to internal network only (`host: '0.0.0.0'`, firewall rules applied by infra)
+- The template listens on `host: '0.0.0.0'`, so restrict the port at network level (firewall) or set the host to `127.0.0.1` when the gateway runs on the same machine
 - Strip any headers forwarded from clients before using them as data
-- The gateway injects `x-developer-tier` - you may use this for tier-specific responses
+- The gateway injects `x-developer-id` and `x-developer-tier` only when the request was authenticated. Data routes are public, so do not rely on them being present
 
 ---
 
@@ -143,11 +145,13 @@ Support these query parameters on list endpoints:
 | `limit` | integer | 20 | 100 | Results per page |
 | `updated_since` | ISO date | - | - | Filter by update time |
 
+New services should use `page`/`limit`. Some existing connectors (for example carris, gtfs, parlamento, sns, ipma) use `limit`/`offset` instead; keep a connector's current style until a versioned change is agreed.
+
 ---
 
 ## 9. Dockerfile
 
-Every service MUST include a `Dockerfile`:
+New services SHOULD include a `Dockerfile` (the template has one). Existing connectors currently run under PM2 with an `ecosystem.config.cjs` and have none:
 
 ```dockerfile
 FROM node:22-alpine
@@ -168,21 +172,24 @@ Once your service is live and passes the checklist below, open an issue in the [
 - Service name
 - Data source URL
 - Your service's internal URL (for gateway registration)
-- A sample response from `/meta`
+- A sample response from `/<service>/meta`
 
-The gateway team will add a proxy route and your service goes live.
+The gateway team will add the proxy route (see [Service → Gateway registration](api-contract.md#service--gateway-registration)) and your service goes live.
 
 ---
 
 ## Checklist before submitting
 
-- [ ] `GET /health` returns `{ status: "ok" }`
-- [ ] `GET /meta` returns correct metadata
+- [ ] `GET /health` (root) returns `{ status: "ok" }`
+- [ ] `GET /<service>/meta` returns correct metadata
+- [ ] Data routes are served under `/<service>/...`, not under `/v1`
 - [ ] All responses use the standard envelope `{ meta, data }`
 - [ ] Field names are English, snake_case
 - [ ] Dates are ISO 8601
 - [ ] Cron job fetches data on a schedule
 - [ ] Stale data is served if source is down
-- [ ] `Dockerfile` included
+- [ ] `npm test` passes and a CI workflow runs it
+- [ ] `Dockerfile` included (recommended)
+- [ ] `.gitignore` excludes `node_modules/` and `.env`; `.env.example` lists every variable
 - [ ] README explains the data source and endpoints
 - [ ] No sensitive data or source credentials in the repo
